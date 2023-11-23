@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stock Application Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            margin: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Stock Application Dashboard</h1>
+    </header>
+    <div class="container">
+        <h2>Stock Prices</h2>
+        <div id="stock-prices">
+            <!-- Stock price data will be displayed here -->
+        </div>
+    </div>
+
+    <script>
+        // Sample stock data
+        const stocks = [
+            { symbol: 'AAPL', name: 'Apple Inc.', price: 150.55 },
+            { symbol: 'GOOGL', name: 'Alphabet Inc.', price: 2700.00 },
+            { symbol: 'MSFT', name: 'Microsoft Corporation', price: 310.20 },
+            // Add more stock data here
+        ];
+
+        // Function to display stock data
+        function displayStocks() {
+            const stockPrices = document.getElementById('stock-prices');
+            stockPrices.innerHTML = '<ul>';
+            stocks.forEach(stock => {
+                stockPrices.innerHTML += `
+                    <li>
+                        <strong>${stock.symbol}:</strong> ${stock.name} - Price: $${stock.price.toFixed(2)}
+                    </li>
+                `;
+            });
+            stockPrices.innerHTML += '</ul>';
+        }
+
+        // Display stock data when the page loads
+        window.addEventListener('load', displayStocks);
+    </script>
+</body>
+</html>

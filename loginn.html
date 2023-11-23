@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock_Exchange Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+    <div class="login-container">
+        <h1>Stock_Exchange<br>Login</h1>
+        <form action="#" method="post">
+           <label style="color:red; for="email">Email:</label>
+           <input type="email" id="email" name="email" required>
+           <label style="color:red; for="password">Password:</label>
+           <input type="password" id="password" name="password" required>
+
+            <button type="submit" class="login-btn" href='/dashboard'>Login</button>
+        </form>
+        <a class="signup-link" href="/register">Don't have an account? Sign up here.</a>
+    </div>
+</body>
+</html>
+
+
+
